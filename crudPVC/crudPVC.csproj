@@ -76,13 +76,26 @@
   <ItemGroup>
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\D_Productos.cs" />
+    <Compile Include="Datos\D_Usuarios.cs" />
     <Compile Include="Entidades\E_Productos.cs" />
     <Compile Include="Entidades\E_Usuarios.cs" />
+    <Compile Include="Presentacion\FormBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormBienvenida.Designer.cs">
+      <DependentUpon>FormBienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\formProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\formProductos.Designer.cs">
       <DependentUpon>formProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\Reportes.cs">
       <DependentUpon>Reportes.xsd</DependentUpon>
@@ -100,8 +113,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\FormBienvenida.resx">
+      <DependentUpon>FormBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\formProductos.resx">
       <DependentUpon>formProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\reportProducFrm.resx">
       <DependentUpon>reportProducFrm.cs</DependentUpon>

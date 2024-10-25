@@ -16,7 +16,7 @@ namespace crudPVC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Presentacion.formProductos());
+            Application.Run(new Presentacion.FormBienvenida());
         }
     }
 }
