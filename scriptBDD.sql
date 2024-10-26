@@ -1,0 +1,363 @@
+--------------------------------------------------------
+-- Archivo creado  - sábado-octubre-26-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table TB_CATEGORIA
+--------------------------------------------------------
+
+  CREATE TABLE "USFINAL"."TB_CATEGORIA" 
+   (	"ID_CATEGORIA" NUMBER(3,0) GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"DESCRIPCION_CAT" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TB_IDENTIFICACION
+--------------------------------------------------------
+
+  CREATE TABLE "USFINAL"."TB_IDENTIFICACION" 
+   (	"ID_IDENT" NUMBER(3,0) GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"DESCRIPCION_IDENT" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TB_MEDIDAS
+--------------------------------------------------------
+
+  CREATE TABLE "USFINAL"."TB_MEDIDAS" 
+   (	"ID_MEDIDA" NUMBER(3,0) GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"DESCRIPCION_MED" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TB_PRODUCTOS
+--------------------------------------------------------
+
+  CREATE TABLE "USFINAL"."TB_PRODUCTOS" 
+   (	"ID_PRODUCTO" NUMBER(5,0) GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"DESCRIPCION_PROD" VARCHAR2(50 BYTE), 
+	"MARCA_PROD" VARCHAR2(30 BYTE), 
+	"ID_MEDIDA" NUMBER, 
+	"ALTOPROD" FLOAT(126), 
+	"ANCHOPROD" FLOAT(126), 
+	"STOCK_ACTUAL" FLOAT(126), 
+	"ACTIVO" CHAR(1 BYTE), 
+	"ID_CATEGORIA" NUMBER, 
+	"FECHACREAPROD" TIMESTAMP (6), 
+	"FECHAMODPROD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TB_ROL
+--------------------------------------------------------
+
+  CREATE TABLE "USFINAL"."TB_ROL" 
+   (	"ID_ROL" NUMBER(3,0) GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"DESCRIPCION_ROL" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TB_USUARIOS
+--------------------------------------------------------
+
+  CREATE TABLE "USFINAL"."TB_USUARIOS" 
+   (	"ID_USUARIO" NUMBER GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"NOMBRE" VARCHAR2(120 BYTE), 
+	"APELLIDO" VARCHAR2(120 BYTE), 
+	"CORREO" VARCHAR2(120 BYTE), 
+	"TELEFONO" VARCHAR2(20 BYTE), 
+	"DIRECCION" VARCHAR2(250 BYTE), 
+	"PPASSWORD" VARCHAR2(120 BYTE), 
+	"ID_IDENT" NUMBER(*,0), 
+	"ID_ROL" NUMBER(*,0), 
+	"NOIDENT" VARCHAR2(20 BYTE), 
+	"FECHACREAUS" TIMESTAMP (6), 
+	"FECHAMODUS" TIMESTAMP (6), 
+	"ACTIVO" CHAR(1 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for View VISTA_PRODUCTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "USFINAL"."VISTA_PRODUCTO" ("ID_PRODUCTO", "DESCRIPCION_PROD", "MARCA_PROD", "DESCRIPCION_MED", "ALTOPROD", "ANCHOPROD", "DESCRIPCION_CAT", "STOCK_ACTUAL", "ID_CATEGORIA") AS 
+  SELECT a.id_producto,
+       a.descripcion_prod,
+       a.marca_prod,
+       c.Descripcion_Med,
+       a.altoProd,
+       a.anchoprod,
+       b.descripcion_cat,
+       a.stock_actual,
+       a.id_categoria
+FROM TB_PRODUCTOS A
+INNER JOIN TB_CATEGORIA B ON A.ID_CATEGORIA = B.ID_CATEGORIA
+INNER JOIN TB_MEDIDAS C ON A.ID_MEDIDA = C.ID_MEDIDA
+WHERE A.ACTIVO = '1'
+;
+--------------------------------------------------------
+--  DDL for View VISTA_USUARIOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "USFINAL"."VISTA_USUARIOS" ("ID_USUARIO", "NOMBRE", "APELLIDO", "CORREO", "TELEFONO", "DIRECCION", "PPASSWORD", "DESCRIPCION_IDENT", "DESCRIPCION_ROL", "NOIDENT") AS 
+  SELECT a.id_usuario,
+       a.nombre,
+       a.apellido,
+       a.correo,
+       a.telefono,
+       a.direccion,
+       a.ppassword,
+       b.Descripcion_Ident,
+       c.Descripcion_Rol,
+       a.noident
+    
+FROM TB_USUARIOS A
+INNER JOIN TB_IDENTIFICACION B ON A.Id_Ident = B.Id_Ident
+INNER JOIN TB_ROL C ON A.ID_ROL = C.ID_ROL
+WHERE A.ACTIVO = '1'
+;
+REM INSERTING into USFINAL.TB_CATEGORIA
+SET DEFINE OFF;
+Insert into USFINAL.TB_CATEGORIA (ID_CATEGORIA,DESCRIPCION_CAT) values (1,'Metal');
+Insert into USFINAL.TB_CATEGORIA (ID_CATEGORIA,DESCRIPCION_CAT) values (2,'Aluminio');
+Insert into USFINAL.TB_CATEGORIA (ID_CATEGORIA,DESCRIPCION_CAT) values (3,'PVC');
+Insert into USFINAL.TB_CATEGORIA (ID_CATEGORIA,DESCRIPCION_CAT) values (4,'Madera');
+REM INSERTING into USFINAL.TB_IDENTIFICACION
+SET DEFINE OFF;
+Insert into USFINAL.TB_IDENTIFICACION (ID_IDENT,DESCRIPCION_IDENT) values (1,'DPI');
+Insert into USFINAL.TB_IDENTIFICACION (ID_IDENT,DESCRIPCION_IDENT) values (2,'PASAPORTE');
+Insert into USFINAL.TB_IDENTIFICACION (ID_IDENT,DESCRIPCION_IDENT) values (3,'NIT');
+REM INSERTING into USFINAL.TB_MEDIDAS
+SET DEFINE OFF;
+Insert into USFINAL.TB_MEDIDAS (ID_MEDIDA,DESCRIPCION_MED) values (1,'Mts');
+Insert into USFINAL.TB_MEDIDAS (ID_MEDIDA,DESCRIPCION_MED) values (2,'Cm');
+Insert into USFINAL.TB_MEDIDAS (ID_MEDIDA,DESCRIPCION_MED) values (3,'Pies');
+Insert into USFINAL.TB_MEDIDAS (ID_MEDIDA,DESCRIPCION_MED) values (4,'Pulgadas');
+REM INSERTING into USFINAL.TB_PRODUCTOS
+SET DEFINE OFF;
+Insert into USFINAL.TB_PRODUCTOS (ID_PRODUCTO,DESCRIPCION_PROD,MARCA_PROD,ID_MEDIDA,ALTOPROD,ANCHOPROD,STOCK_ACTUAL,ACTIVO,ID_CATEGORIA,FECHACREAPROD,FECHAMODPROD) values (1,'Producto','Marca',2,12,2,1,'1',3,to_timestamp('25/10/24 11:01:12.111000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),to_timestamp('25/10/24 05:34:29.252000000 PM','DD/MM/RR HH12:MI:SSXFF AM'));
+Insert into USFINAL.TB_PRODUCTOS (ID_PRODUCTO,DESCRIPCION_PROD,MARCA_PROD,ID_MEDIDA,ALTOPROD,ANCHOPROD,STOCK_ACTUAL,ACTIVO,ID_CATEGORIA,FECHACREAPROD,FECHAMODPROD) values (2,'Ventanas','MarcaV',2,200,300.57,25,'1',1,to_timestamp('25/10/24 11:04:15.034000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),to_timestamp('26/10/24 12:26:22.687000000 AM','DD/MM/RR HH12:MI:SSXFF AM'));
+Insert into USFINAL.TB_PRODUCTOS (ID_PRODUCTO,DESCRIPCION_PROD,MARCA_PROD,ID_MEDIDA,ALTOPROD,ANCHOPROD,STOCK_ACTUAL,ACTIVO,ID_CATEGORIA,FECHACREAPROD,FECHAMODPROD) values (4,'Producto222','Marca222',2,2,9,1111,'0',3,to_timestamp('25/10/24 05:49:07.820000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null);
+Insert into USFINAL.TB_PRODUCTOS (ID_PRODUCTO,DESCRIPCION_PROD,MARCA_PROD,ID_MEDIDA,ALTOPROD,ANCHOPROD,STOCK_ACTUAL,ACTIVO,ID_CATEGORIA,FECHACREAPROD,FECHAMODPROD) values (5,'Puerta','HH',1,2.8,1.9,10,'1',4,to_timestamp('26/10/24 12:25:09.774000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null);
+Insert into USFINAL.TB_PRODUCTOS (ID_PRODUCTO,DESCRIPCION_PROD,MARCA_PROD,ID_MEDIDA,ALTOPROD,ANCHOPROD,STOCK_ACTUAL,ACTIVO,ID_CATEGORIA,FECHACREAPROD,FECHAMODPROD) values (3,'Producto 3','Marca 3',3,15,20,10,'0',2,to_timestamp('25/10/24 11:29:35.352000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null);
+REM INSERTING into USFINAL.TB_ROL
+SET DEFINE OFF;
+Insert into USFINAL.TB_ROL (ID_ROL,DESCRIPCION_ROL) values (1,'user');
+Insert into USFINAL.TB_ROL (ID_ROL,DESCRIPCION_ROL) values (2,'admin');
+REM INSERTING into USFINAL.TB_USUARIOS
+SET DEFINE OFF;
+Insert into USFINAL.TB_USUARIOS (ID_USUARIO,NOMBRE,APELLIDO,CORREO,TELEFONO,DIRECCION,PPASSWORD,ID_IDENT,ID_ROL,NOIDENT,FECHACREAUS,FECHAMODUS,ACTIVO) values (4,'jor','ajd','ajdf','asdf','aa','asdf',1,2,'Luisas',to_timestamp('25/10/24 05:31:00.303000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),to_timestamp('25/10/24 05:49:41.095000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),'0');
+Insert into USFINAL.TB_USUARIOS (ID_USUARIO,NOMBRE,APELLIDO,CORREO,TELEFONO,DIRECCION,PPASSWORD,ID_IDENT,ID_ROL,NOIDENT,FECHACREAUS,FECHAMODUS,ACTIVO) values (1,'Luis','Perez','ggg@gmail.com','12890945','25 calle zona 25','12345',2,0,'12345678',to_timestamp('25/10/24 05:05:16.428000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,'1');
+Insert into USFINAL.TB_USUARIOS (ID_USUARIO,NOMBRE,APELLIDO,CORREO,TELEFONO,DIRECCION,PPASSWORD,ID_IDENT,ID_ROL,NOIDENT,FECHACREAUS,FECHAMODUS,ACTIVO) values (2,'JORGE','LJUIS','ASDF@AD','1234','ADJFAK','AAAA',1,0,'ASFVADF',to_timestamp('25/10/24 05:11:40.747000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,'1');
+Insert into USFINAL.TB_USUARIOS (ID_USUARIO,NOMBRE,APELLIDO,CORREO,TELEFONO,DIRECCION,PPASSWORD,ID_IDENT,ID_ROL,NOIDENT,FECHACREAUS,FECHAMODUS,ACTIVO) values (5,'Jorge','Perez','perez@miumg.edu.gt','12345678','Ciudad de Guatemala','12345',3,1,'12345-7',to_timestamp('26/10/24 12:30:34.435000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),to_timestamp('26/10/24 12:30:45.792000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),'0');
+Insert into USFINAL.TB_USUARIOS (ID_USUARIO,NOMBRE,APELLIDO,CORREO,TELEFONO,DIRECCION,PPASSWORD,ID_IDENT,ID_ROL,NOIDENT,FECHACREAUS,FECHAMODUS,ACTIVO) values (6,'Luis','Paz','perez@miumg.edu.gt','12345678','Ciudad de Guatemala','12345',1,2,'123345533',to_timestamp('26/10/24 12:31:17.202000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,'1');
+Insert into USFINAL.TB_USUARIOS (ID_USUARIO,NOMBRE,APELLIDO,CORREO,TELEFONO,DIRECCION,PPASSWORD,ID_IDENT,ID_ROL,NOIDENT,FECHACREAUS,FECHAMODUS,ACTIVO) values (3,'Juan','Pérez','juan.perez@example.com','1234567890','Calle Falsa 123','password123',2,null,null,to_timestamp('25/10/24 05:19:58.479000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),to_timestamp('25/10/24 05:19:58.479000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),'1');
+--------------------------------------------------------
+--  DDL for Procedure P_ELIMINAR
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "USFINAL"."P_ELIMINAR" (nIdProd in number)
+as
+begin
+UPDATE TB_PRODUCTOS SET ACTIVO='0' WHERE id_producto = nIdProd;
+end;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure P_ELIMINARUSUARIO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "USFINAL"."P_ELIMINARUSUARIO" (nIdUs IN NUMBER)
+AS
+BEGIN
+    UPDATE TB_USUARIOS
+    SET ACTIVO = '0'
+    WHERE Id_usuario = nIdUs;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure P_GUARDARPROD
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "USFINAL"."P_GUARDARPROD" (pOpcion in number,
+                               pIdProd in number,
+                               pDescProd in varchar2,
+                               pMarcaProd in varchar2,
+                               pMedidaProd in number,
+                               pAltoProd in float,
+                               pAnchoProd in float,
+                               pStock in float,
+                               pIdCat in number)
+AS
+vFechaCreaProd TIMESTAMP;
+vFechaModProd TIMESTAMP;
+BEGIN
+    IF pOpcion = 1 then
+    vFechaCreaProd := SYSTIMESTAMP;
+    insert into TB_PRODUCTOS(DESCRIPCION_PROD,
+                             MARCA_PROD,
+                             ID_MEDIDA,
+                             ALTOPROD,
+                             ANCHOPROD,
+                             STOCK_ACTUAL,
+                             ID_CATEGORIA,
+                             FechaCreaProd,
+                             ACTIVO)
+                    VALUES(pDescProd, pMarcaProd,pMedidaProd,pAltoProd,pAnchoProd, pStock, pIdCat,vFechaCreaProd,1);
+    else
+    vFechaModProd := SYSTIMESTAMP;
+        update tb_productos SET descripcion_prod = pdescprod,
+                                marca_prod = pmarcaprod,
+                                ID_Medida = pmedidaprod,
+                                altoProd = pAltoprod,
+                                anchoProd = pAnchoProd,
+                                stock_actual = pstock,
+                                id_categoria = pidcat,
+                                fechaModProd = vFechaModProd
+where id_producto = pidprod;
+    end if;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure P_GUARDARUS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "USFINAL"."P_GUARDARUS" (
+    pOpcion IN NUMBER,
+    pIdUs IN NUMBER,
+    pNombre IN VARCHAR2,
+    pApellido IN VARCHAR2,
+    pCorreo IN VARCHAR2,
+    pTelefono IN VARCHAR2,
+    pDireccion IN VARCHAR2,
+    pPasswor IN VARCHAR2,
+    pIdIdent IN NUMBER,
+    pRol IN NUMBER,
+    pnoIdent IN VARCHAR2
+)
+AS
+    vFechaCreaUs TIMESTAMP;
+    vFechaModUs TIMESTAMP;
+BEGIN
+    IF pOpcion = 1 THEN
+        -- Inserción de un nuevo usuario
+        vFechaCreaUs := SYSTIMESTAMP;
+        INSERT INTO TB_USUARIOS (
+            nombre, apellido, correo, telefono, direccion, ppassword, Id_Ident,Id_Rol,noIdent, fechaCreaUs, ACTIVO
+        ) VALUES (
+            pNombre, pApellido, pCorreo, pTelefono, pDireccion, pPasswor, pIdIdent,pRol,pnoIdent, vFechaCreaUs,'1'
+        );
+    ELSE
+        -- Actualización de un usuario existente
+        vFechaModUs := SYSTIMESTAMP;
+        UPDATE TB_USUARIOS
+        SET nombre = pNombre,
+            apellido = pApellido,
+            correo = pCorreo,
+            telefono = pTelefono,
+            direccion = pDireccion,
+            ppassword = pPasswor,
+            Id_Ident = pIdIdent,
+            Id_Rol = pRol,
+            noIdent = pnoIdent,
+            fechaModUs = vFechaModUs
+        WHERE Id_usuario = pIdUs;
+    END IF;
+END;
+
+/
+--------------------------------------------------------
+--  Constraints for Table TB_IDENTIFICACION
+--------------------------------------------------------
+
+  ALTER TABLE "USFINAL"."TB_IDENTIFICACION" MODIFY ("ID_IDENT" NOT NULL ENABLE);
+  ALTER TABLE "USFINAL"."TB_IDENTIFICACION" ADD PRIMARY KEY ("ID_IDENT")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TB_ROL
+--------------------------------------------------------
+
+  ALTER TABLE "USFINAL"."TB_ROL" MODIFY ("ID_ROL" NOT NULL ENABLE);
+  ALTER TABLE "USFINAL"."TB_ROL" ADD PRIMARY KEY ("ID_ROL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TB_CATEGORIA
+--------------------------------------------------------
+
+  ALTER TABLE "USFINAL"."TB_CATEGORIA" MODIFY ("ID_CATEGORIA" NOT NULL ENABLE);
+  ALTER TABLE "USFINAL"."TB_CATEGORIA" ADD PRIMARY KEY ("ID_CATEGORIA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TB_PRODUCTOS
+--------------------------------------------------------
+
+  ALTER TABLE "USFINAL"."TB_PRODUCTOS" MODIFY ("ID_PRODUCTO" NOT NULL ENABLE);
+  ALTER TABLE "USFINAL"."TB_PRODUCTOS" ADD PRIMARY KEY ("ID_PRODUCTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TB_USUARIOS
+--------------------------------------------------------
+
+  ALTER TABLE "USFINAL"."TB_USUARIOS" MODIFY ("ID_USUARIO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_MEDIDAS
+--------------------------------------------------------
+
+  ALTER TABLE "USFINAL"."TB_MEDIDAS" MODIFY ("ID_MEDIDA" NOT NULL ENABLE);
+  ALTER TABLE "USFINAL"."TB_MEDIDAS" ADD PRIMARY KEY ("ID_MEDIDA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
