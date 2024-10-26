@@ -80,7 +80,7 @@ namespace crudPVC.Presentacion
             btnNuevo.Enabled = lEstado;
             btnModificar.Enabled = lEstado;
             btnEliminar.Enabled = lEstado;
-            btnReporte.Enabled = lEstado;
+            //btnReporte.Enabled = lEstado;
        
         }
 

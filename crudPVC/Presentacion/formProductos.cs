@@ -69,7 +69,7 @@ namespace crudPVC.Presentacion
                 Modificarbtn.Enabled = lEstado;
                 Eliminarbtn.Enabled = lEstado;
                 Reportebtn.Enabled = lEstado;
-                btnSalir.Enabled = lEstado;
+                //btnSalir.Enabled = lEstado;
         }
 
         private void FormatoDGVProd() {
