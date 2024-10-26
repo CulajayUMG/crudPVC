@@ -79,6 +79,18 @@
     <Compile Include="Datos\D_Usuarios.cs" />
     <Compile Include="Entidades\E_Productos.cs" />
     <Compile Include="Entidades\E_Usuarios.cs" />
+    <Compile Include="Presentacion\BienvenidaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\BienvenidaUsuario.Designer.cs">
+      <DependentUpon>BienvenidaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FormBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\BienvenidaUsuario.resx">
+      <DependentUpon>BienvenidaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FormBienvenida.resx">
       <DependentUpon>FormBienvenida.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,12 +31,13 @@
             this.titulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTareas = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.Reportebtn = new System.Windows.Forms.Button();
             this.Eliminarbtn = new System.Windows.Forms.Button();
             this.Modificarbtn = new System.Windows.Forms.Button();
             this.nuevoBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.boxMedida = new System.Windows.Forms.ComboBox();
             this.anchoTxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,8 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.boxMedida = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.titulo.SuspendLayout();
             this.panelTareas.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,7 +68,7 @@
             this.titulo.Controls.Add(this.label1);
             this.titulo.Location = new System.Drawing.Point(1, 2);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(1169, 65);
+            this.titulo.Size = new System.Drawing.Size(1283, 65);
             this.titulo.TabIndex = 0;
             // 
             // label1
@@ -86,24 +85,14 @@
             // panelTareas
             // 
             this.panelTareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelTareas.Controls.Add(this.btnSalir);
             this.panelTareas.Controls.Add(this.Reportebtn);
             this.panelTareas.Controls.Add(this.Eliminarbtn);
             this.panelTareas.Controls.Add(this.Modificarbtn);
             this.panelTareas.Controls.Add(this.nuevoBtn);
-            this.panelTareas.Location = new System.Drawing.Point(1060, 73);
+            this.panelTareas.Location = new System.Drawing.Point(1290, 2);
             this.panelTareas.Name = "panelTareas";
-            this.panelTareas.Size = new System.Drawing.Size(110, 489);
+            this.panelTareas.Size = new System.Drawing.Size(121, 601);
             this.panelTareas.TabIndex = 1;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(26, 376);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // Reportebtn
             // 
@@ -170,8 +159,26 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(1, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1057, 489);
+            this.panel1.Size = new System.Drawing.Size(1283, 530);
             this.panel1.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(270, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 16);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "uMedida";
+            // 
+            // boxMedida
+            // 
+            this.boxMedida.Enabled = false;
+            this.boxMedida.FormattingEnabled = true;
+            this.boxMedida.Location = new System.Drawing.Point(237, 112);
+            this.boxMedida.Name = "boxMedida";
+            this.boxMedida.Size = new System.Drawing.Size(121, 24);
+            this.boxMedida.TabIndex = 20;
             // 
             // anchoTxt
             // 
@@ -261,11 +268,11 @@
             // 
             this.DGVListadoProd.ColumnHeadersHeight = 25;
             this.DGVListadoProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DGVListadoProd.Location = new System.Drawing.Point(373, 13);
+            this.DGVListadoProd.Location = new System.Drawing.Point(395, 3);
             this.DGVListadoProd.Name = "DGVListadoProd";
             this.DGVListadoProd.RowHeadersWidth = 51;
             this.DGVListadoProd.RowTemplate.Height = 24;
-            this.DGVListadoProd.Size = new System.Drawing.Size(680, 459);
+            this.DGVListadoProd.Size = new System.Drawing.Size(876, 511);
             this.DGVListadoProd.TabIndex = 10;
             this.DGVListadoProd.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVListadoProd_CellEnter);
             // 
@@ -337,29 +344,11 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Marca";
             // 
-            // boxMedida
-            // 
-            this.boxMedida.Enabled = false;
-            this.boxMedida.FormattingEnabled = true;
-            this.boxMedida.Location = new System.Drawing.Point(237, 112);
-            this.boxMedida.Name = "boxMedida";
-            this.boxMedida.Size = new System.Drawing.Size(121, 24);
-            this.boxMedida.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(270, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 16);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "uMedida";
-            // 
             // formProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 563);
+            this.ClientSize = new System.Drawing.Size(1412, 606);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTareas);
             this.Controls.Add(this.titulo);
@@ -386,7 +375,6 @@
         private System.Windows.Forms.Button Eliminarbtn;
         private System.Windows.Forms.Button Modificarbtn;
         private System.Windows.Forms.Button nuevoBtn;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox altoTxt;
         private System.Windows.Forms.TextBox stocktxt;
